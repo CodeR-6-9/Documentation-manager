@@ -1,0 +1,294 @@
+/* Add these new styles to your existing status.css */
+.progress-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  position: relative;
+}
+
+.progress-tracker::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  width: 25%;
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  color: #999;
+  text-align: center;
+}
+
+.progress-step.active .step-icon {
+  background: #0066cc;
+  color: white;
+}
+
+.progress-step.active .step-label {
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.current-status {
+  background: #f0f7ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 4px solid #0066cc;
+}
+
+.current-status i {
+  color: #0066cc;
+  font-size: 1.2rem;
+}
+
+.current-status strong {
+  color: #0066cc;
+}
+
+/* Keep all your existing CSS below this line */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin: 30px 0 20px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.logo i {
+  font-size: 2.5rem;
+  color: #0066cc;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 600;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #0066cc, #004080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+/* Status Container */
+.container {
+  background: white;
+  width: 700px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.status-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.status-header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.status-header h1 i {
+  color: #0066cc;
+}
+
+.status-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+/* Status Card */
+.status-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 25px;
+  position: relative;
+}
+
+.status-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #fff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.status-badge i {
+  font-size: 1.2rem;
+}
+
+.status-badge.pending {
+  color: #FF9800;
+  border: 1px solid #FF9800;
+}
+
+.status-badge.approved {
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+}
+
+.status-badge.rejected {
+  color: #F44336;
+  border: 1px solid #F44336;
+}
+
+/* Status Details */
+.status-details {
+  margin-top: 20px;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+}
+
+.detail-label {
+  width: 200px;
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-label i {
+  color: #0066cc;
+  width: 20px;
+}
+
+.detail-value {
+  flex: 1;
+  color: #333;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.actions button:first-child {
+  background: #0066cc;
+  color: white;
+  border: none;
+}
+
+.actions button:first-child:hover {
+  background: #004080;
+}
+
+.actions button:last-child {
+  background: #fff;
+  color: #0066cc;
+  border: 1px solid #0066cc;
+}
+
+.actions button:last-child:hover {
+  background: #f0f7ff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media print {
+  body {
+    background: none;
+  }
+  .container {
+    box-shadow: none;
+    width: auto;
+  }
+  .actions {
+    display: none;
+  }
+}

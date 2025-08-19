@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <i class="fas fa-landmark"></i>
+      <h1>Government of NCT of Delhi</h1>
+    </div>
+    <h2 class="page-title">Certificate Issuance Portal</h2>
+  </div>
+
+  <div class="container">
+    <div class="form-header">
+      <h1><i class="fas fa-file-alt"></i> Certificate Application</h1>
+      <p>Fill in your details to request an official certificate</p>
+    </div>
+    
+    <form id="applicationForm">
+      <div class="form-group">
+        <label for="fullName"><i class="fas fa-user"></i> Full Name:</label>
+        <input type="text" id="fullName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="fatherName"><i class="fas fa-user-tie"></i> Father's Name:</label>
+        <input type="text" id="fatherName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone"><i class="fas fa-phone"></i> Phone Number:</label>
+        <input type="tel" id="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="certificateType"><i class="fas fa-certificate"></i> Certificate Type:</label>
+        <select id="certificateType" required>
+          <option value="">Select Certificate</option>
+          <option value="Religion">Religion Certificate</option>
+          <option value="Income">Income Certificate</option>
+          <option value="Residence">Residence Certificate</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="document"><i class="fas fa-file-upload"></i> Upload Document:</label>
+        <div class="file-upload">
+          <input type="file" id="document" accept=".pdf,.jpg,.png" required>
+          <label for="document" class="file-label">Choose File</label>
+          <span id="file-name">No file chosen</span>
+        </div>
+      </div>
+
+      <button type="submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
+    </form>
+  </div>
+  <script src="js/application.js"></script>
+</body>
+</html>
